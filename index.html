@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maestría en Velas Intencionadas</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #8E44AD;
+            --secondary-color: #F39C12;
+            --text-color: #2C3E50;
+            --bg-color: #ECF0F1;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 20px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style-type: none;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: var(--secondary-color);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 150px 0 50px;
+            min-height: 100vh;
+        }
+
+        .hero-content {
+            flex: 1;
+            padding-right: 50px;
+        }
+
+        .hero-image {
+            flex: 1;
+            height: 400px;
+            background-color: #ddd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: #666;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin: 50px 0;
+        }
+
+        .feature {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .feature:hover {
+            transform: translateY(-10px);
+        }
+
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            background-color: var(--secondary-color);
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: white;
+        }
+
+        .section {
+            padding: 100px 0;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .section:nth-child(even) {
+            background-color: white;
+        }
+
+        .cta {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 50px 0;
+            text-align: center;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 18px;
+            margin-top: 20px;
+            transition: background-color 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background-color: #E67E22;
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                flex-direction: column;
+            }
+
+            .hero-content {
+                padding-right: 0;
+                margin-bottom: 30px;
+            }
+
+            .hero-image {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#materiales">Materiales</a></li>
+                <li><a href="#tecnicas">Técnicas</a></li>
+                <li><a href="#negocio">Negocio</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="inicio" class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1>Maestría en Velas Intencionadas</h1>
+                    <p>Crea, Conecta y Conquista el Mundo del Emprendimiento Holístico</p>
+                    <p>Aprende a crear velas que no solo iluminan espacios, sino que también transforman vidas. Nuestro curso te enseñará cómo convertir tu pasión en un negocio próspero.</p>
+                </div>
+                <div class="hero-image">
+                    Imagen de Vela Aquí
+                </div>
+            </div>
+        </section>
+
+        <section class="features">
+            <div class="feature" onclick="scrollToSection('materiales')">
+                <div class="feature-icon">🌿</div>
+                <h3>Materiales Naturales</h3>
+                <p>Aprende a seleccionar y utilizar los mejores ingredientes naturales para tus velas.</p>
+            </div>
+            <div class="feature" onclick="scrollToSection('tecnicas')">
+                <div class="feature-icon">💡</div>
+                <h3>Técnicas Avanzadas</h3>
+                <p>Domina técnicas exclusivas para crear velas únicas y poderosas.</p>
+            </div>
+            <div class="feature" onclick="scrollToSection('negocio')">
+                <div class="feature-icon">💼</div>
+                <h3>Estrategias de Negocio</h3>
+                <p>Descubre cómo convertir tu pasión en un emprendimiento exitoso.</p>
+            </div>
+        </section>
+
+        <section id="materiales" class="section">
+            <div class="container">
+                <h2>Materiales Naturales</h2>
+                <p>En esta sección, aprenderás sobre los mejores materiales naturales para crear velas intencionadas de alta calidad. Descubrirás cómo seleccionar ceras, aceites esenciales y hierbas que potencien las propiedades energéticas de tus velas.</p>
+                <!-- Aquí puedes agregar más contenido sobre materiales naturales -->
+            </div>
+        </section>
+
+        <section id="tecnicas" class="section">
+            <div class="container">
+                <h2>Técnicas Avanzadas</h2>
+                <p>Domina técnicas exclusivas para crear velas únicas y poderosas. Aprenderás métodos de fabricación avanzados, cómo incorporar cristales y otros elementos energéticos, y cómo crear diseños personalizados que capturen la esencia de tus intenciones.</p>
+                <!-- Aquí puedes agregar más contenido sobre técnicas avanzadas -->
+            </div>
+        </section>
+
+        <section id="negocio" class="section">
+            <div class="container">
+                <h2>Estrategias de Negocio</h2>
+                <p>Transforma tu pasión por las velas intencionadas en un negocio próspero. Aprenderás estrategias de marketing, cómo crear una marca única, técnicas de venta en línea y offline, y cómo construir una comunidad alrededor de tu negocio holístico.</p>
+                <!-- Aquí puedes agregar más contenido sobre estrategias de negocio -->
+            </div>
+        </section>
+
+        <section class="cta">
+            <div class="container">
+                <h2>¿Listo para Transformar tu Vida y la de Otros?</h2>
+                <p>Inscríbete ahora y obtén un 20% de descuento con el código VELA20</p>
+                <a href="#" class="cta-button" id="showOfferBtn">¡Quiero Inscribirme!</a>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        function scrollToSection(sectionId) {
+            const section = document.getElementById(sectionId);
+            section.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        document.getElementById('showOfferBtn').addEventListener('click', function(e) {
+            e.preventDefault();
+            alert('¡Gracias por tu interés! Pronto te contactaremos con más detalles sobre el curso.');
+        });
+    </script>
+</body>
+</html>
