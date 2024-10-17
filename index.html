@@ -42,9 +42,14 @@
             z-index: 1000;
         }
 
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
         nav ul {
             display: flex;
-            justify-content: center;
             list-style-type: none;
         }
 
@@ -60,6 +65,19 @@
 
         nav ul li a:hover {
             color: var(--secondary-color);
+        }
+
+        .nav-cta {
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .nav-cta:hover {
+            background-color: #E67E22;
         }
 
         h1 {
@@ -173,18 +191,27 @@
             .hero-image {
                 width: 100%;
             }
+
+            nav {
+                flex-direction: column;
+            }
+
+            nav ul {
+                margin-bottom: 10px;
+            }
         }
     </style>
 </head>
 <body>
     <header>
-        <nav>
+        <nav class="container">
             <ul>
                 <li><a href="#inicio">Inicio</a></li>
                 <li><a href="#materiales">Materiales</a></li>
                 <li><a href="#tecnicas">Técnicas</a></li>
                 <li><a href="#negocio">Negocio</a></li>
             </ul>
+            <a href="#" class="nav-cta" id="inscribirmeBtn">Inscribirme</a>
         </nav>
     </header>
 
@@ -248,7 +275,7 @@
             <div class="container">
                 <h2>¿Listo para Transformar tu Vida y la de Otros?</h2>
                 <p>Inscríbete ahora y obtén un 20% de descuento con el código VELA20</p>
-                <a href="#" class="cta-button" id="showOfferBtn">¡Quiero Inscribirme!</a>
+                <a href="#" class="cta-button" id="ctaInscribirmeBtn">¡Quiero Inscribirme!</a>
             </div>
         </section>
     </main>
@@ -259,9 +286,20 @@
             section.scrollIntoView({ behavior: 'smooth' });
         }
 
-        document.getElementById('showOfferBtn').addEventListener('click', function(e) {
+        function sendWhatsAppMessage() {
+            const phoneNumber = "51933902835";
+            const message = encodeURIComponent("Quiero tomar la maestria de velas intencionadas");
+            window.open(`https://wa.me/${phoneNumber}?text=${message}`, '_blank');
+        }
+
+        document.getElementById('inscribirmeBtn').addEventListener('click', function(e) {
             e.preventDefault();
-            alert('¡Gracias por tu interés! Pronto te contactaremos con más detalles sobre el curso.');
+            sendWhatsAppMessage();
+        });
+
+        document.getElementById('ctaInscribirmeBtn').addEventListener('click', function(e) {
+            e.preventDefault();
+            sendWhatsAppMessage();
         });
     </script>
 </body>
